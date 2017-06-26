@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 会理发的店小二</title>
+  <title>会理发的店小二</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密. 那他是怎么实现的?下面我们将使用三步走的战略,一步一步的破译Spring的机密 需要的材料   名称 说明     ObjectPool 对">
+<meta property="og:type" content="article">
 <meta property="og:title" content="会理发的店小二">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/当"反射"遇到"IO"触发的"基情"/index.html">
 <meta property="og:site_name" content="会理发的店小二">
+<meta property="og:description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密. 那他是怎么实现的?下面我们将使用三步走的战略,一步一步的破译Spring的机密 需要的材料   名称 说明     ObjectPool 对">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-26T15:05:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="会理发的店小二">
+<meta name="twitter:description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密. 那他是怎么实现的?下面我们将使用三步走的战略,一步一步的破译Spring的机密 需要的材料   名称 说明     ObjectPool 对">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="会理发的店小二" type="application/atom+xml">
   
@@ -141,133 +148,192 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="当”反射”遇到”IO”触发的”基情”"><a href="#当”反射”遇到”IO”触发的”基情”" class="headerlink" title="当”反射”遇到”IO”触发的”基情”"></a>当”反射”遇到”IO”触发的”基情”</h1><p><img src="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表情.jpg"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>别看短,因为很精简</p>
+<h3 id="会有什么基情啊"><a href="#会有什么基情啊" class="headerlink" title="会有什么基情啊?"></a>会有什么基情啊?</h3><p> 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密.</p>
+<h3 id="那他是怎么实现的"><a href="#那他是怎么实现的" class="headerlink" title="那他是怎么实现的?"></a>那他是怎么实现的?</h3><p>下面我们将使用三步走的战略,一步一步的破译Spring的机密</p>
+<h4 id="需要的材料"><a href="#需要的材料" class="headerlink" title="需要的材料"></a>需要的材料</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ObjectPool</td>
+<td style="text-align:left">对象向容器</td>
+</tr>
+<tr>
+<td style="text-align:left">POJO</td>
+<td style="text-align:left">简单对象</td>
+</tr>
+<tr>
+<td style="text-align:left">Config</td>
+<td style="text-align:left">配置文件</td>
+</tr>
+</tbody>
+</table>
+<h4 id="实现的步骤"><a href="#实现的步骤" class="headerlink" title="实现的步骤"></a>实现的步骤</h4><ol>
+<li><p>创建简单对象<br>我们就写个Person类就可以了:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line"><span class="keyword">private</span> String name;</div><div class="line"> <span class="keyword">private</span> String age;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, String age)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">        <span class="keyword">this</span>.age = age;</div><div class="line">    &#125;</div><div class="line"> <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"此人的姓名: "</span>+name+<span class="string">",年龄: "</span>+age+<span class="string">"岁"</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//省略get,set方法</span></div><div class="line">    <span class="string">''</span><span class="string">''</span><span class="string">''</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建对象容器<br>下面可是重头戏了,可得集中注意力了,下面将讲解大体思路:</p>
+<ul>
+<li>创建对象池(通过Map集合实现)</li>
+<li>将配置文件(装有对象信息)装换成输入流并获取其信息</li>
+<li>根据其信息通过反射调用设置对象的值</li>
+<li>最后获取对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**对象容器*/</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExtendedObjectPoolFactory</span> </span>&#123;</div><div class="line"><span class="comment">//对象容器池</span></div><div class="line">    <span class="keyword">private</span> Map&lt;String, Object&gt; objectPool = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line"><span class="comment">//文件配置对象</span></div><div class="line">    <span class="keyword">private</span> Properties config = <span class="keyword">new</span> Properties();</div><div class="line"><span class="comment">/**</span></div><div class="line">*初始化</div><div class="line">*/</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(String fileName)</span> </span>&#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="comment">//将文件转换成输入流</span></div><div class="line">            FileInputStream fis = <span class="keyword">new</span> FileInputStream(fileName);</div><div class="line">            &#123;<span class="comment">//文件配置对象加载输入流</span></div><div class="line">                config.load(fis);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        initPool()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 创建对象</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> name</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     * <span class="doctag">@throws</span> ClassNotFoundException</div><div class="line">     * <span class="doctag">@throws</span> IllegalAccessException</div><div class="line">     * <span class="doctag">@throws</span> InstantiationException</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> Object <span class="title">createObject</span><span class="params">(String name)</span> <span class="keyword">throws</span> ClassNotFoundException, IllegalAccessException, InstantiationException </span>&#123;</div><div class="line">        <span class="comment">//通过反射创建对象</span></div><div class="line">        <span class="keyword">return</span> Class.forName(name).newInstance();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 初始化对象池</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initPool</span><span class="params">()</span> <span class="keyword">throws</span> IllegalAccessException, InstantiationException, ClassNotFoundException </span>&#123;</div><div class="line">        <span class="keyword">for</span> (String name : config.stringPropertyNames()) &#123;</div><div class="line">            <span class="comment">//将文件里的对象放入我们的对象池</span></div><div class="line">            <span class="keyword">if</span> (!name.contains(<span class="string">"%"</span>)) objectPool.put(name, createObject(config.getProperty(name)));</div><div class="line">        &#125;</div><div class="line">        initProperty();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 初始化文件配置</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initProperty</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchMethodException, InvocationTargetException, IllegalAccessException </span>&#123;</div><div class="line">        <span class="keyword">for</span> (String name : config.stringPropertyNames()) &#123;</div><div class="line">            <span class="keyword">if</span> (name.contains(<span class="string">"%"</span>)) &#123;</div><div class="line">                String [] objAndProp=name.split(<span class="string">"%"</span>);</div><div class="line">                <span class="comment">//获取setter方法的参数值</span></div><div class="line">                Object target=getObject(objAndProp[<span class="number">0</span>]);</div><div class="line">                <span class="comment">//拼接字符串toUpperCase()保证大写</span></div><div class="line">                String mtName=<span class="string">"set"</span>+objAndProp[<span class="number">1</span>].substring(<span class="number">0</span>,<span class="number">1</span>).toUpperCase()+objAndProp[<span class="number">1</span>].substring(<span class="number">1</span>);</div><div class="line">                <span class="comment">//获取实现类对应的</span></div><div class="line">                Class&lt;?&gt; targetClass=target.getClass();</div><div class="line">                <span class="comment">//获取对应的方法 </span></div><div class="line">                Method mtd=targetClass.getMethod(mtName,String.class);</div><div class="line">                <span class="comment">//调用方法</span></div><div class="line">                mtd.invoke(target,config.getProperty(name));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 获取对象</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> name</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getObject</span><span class="params">(String name)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> objectPool.get(name);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>编写配置文件<br> 文件名称: <strong>exobj.txt</strong><br> 文件内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a=com.bean.Person</div><div class="line">b=com.bean.Person</div><div class="line">#分别设置a,b对象的姓名和年龄注意格式</div><div class="line">a%name=Zuckerberg</div><div class="line">a%age=30</div><div class="line">b%name=James</div><div class="line">b%age=50</div></pre></td></tr></table></figure>
+</li>
+<li><p>测试结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public static void main(String[] args) throws IllegalAccessException, ClassNotFoundException, InstantiationException, NoSuchMethodException, InvocationTargetException &#123;</div><div class="line">        ExtendedObjectPoolFactory eopf=new ExtendedObjectPoolFactory();</div><div class="line">        //初始化</div><div class="line">        eopf.init(&quot;exobj.txt&quot;);</div><div class="line">        System.out.println(&quot;文件里的对象:&quot;);</div><div class="line">        System.out.println(eopf.getObject(&quot;a&quot;));</div><div class="line">        System.out.println(eopf.getObject(&quot;b&quot;));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> 文件里的对象:</div><div class="line">此人的姓名: Zuckerberg,年龄: 30岁</div><div class="line">此人的姓名: James,年龄: 50岁</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="总结与优化"><a href="#总结与优化" class="headerlink" title="总结与优化"></a>总结与优化</h3><p>下面我们在回顾一下我们的整个流程</p>
+<ul>
+<li>编写简单对象类和对象容器类.</li>
+<li>通过txt文件配置对象的属性.</li>
+<li><p>创建对象容器类的对象(好像有点绕口),并初始化.</p>
+<p>接下来我们怎么优化呢,无非就是从性能实用性和扩展性这两个方向:</p>
+</li>
+<li>从性能实用性上考虑,我们可以采用更高效的Java io Api,和使用xml代替txt文件等,这个就是仁者见仁智了.</li>
+<li>从扩展性上考虑,那设计模式再合适不过了,我们可以采用工厂和建造者等等设计模式去实现了,这个灵活性很高,需要对设计模式有一定的了解.</li>
+</ul>
+<p>通过一步步的分析,你现在是不是感慨很多东西也不是特别的困难,那就不要停留在感慨了,赶快动起你发财的小手敲代码吧.<br><img src="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表情.jpg"><br>另外本人对扯蛋有独到见解,欢迎前来<a href="https://littleiii.github.io" target="_blank" rel="external">本人博客</a>扯蛋,我有酒,就差你的故事了</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# 代理模式/" class="archive-article-date">
-  	<time datetime="2017-06-26T15:03:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/26/当"反射"遇到"IO"触发的"基情"/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/java注解/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:51:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2017/06/26/java注解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/26/# App开发规范/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# App开发规范/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:27:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-26T13:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/26/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -290,8 +356,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

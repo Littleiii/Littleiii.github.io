@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 会理发的店小二</title>
+  <title>会理发的店小二</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="App开发规范一.项目结构随着MVP设计模式的流行,就默认采用下面两种项目结构.  适合小项目 app——Application Activity Fragment  Presenter等的顶级父类 config——API,常量表等 model——数据层 entities——数据模型 presenter——MVP的P view——MVP的V utils——工具类集合 widget——各个可复用Vi">
+<meta property="og:type" content="article">
 <meta property="og:title" content="会理发的店小二">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/# App开发规范/index.html">
 <meta property="og:site_name" content="会理发的店小二">
+<meta property="og:description" content="App开发规范一.项目结构随着MVP设计模式的流行,就默认采用下面两种项目结构.  适合小项目 app——Application Activity Fragment  Presenter等的顶级父类 config——API,常量表等 model——数据层 entities——数据模型 presenter——MVP的P view——MVP的V utils——工具类集合 widget——各个可复用Vi">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-010bc516e77b1f8e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-26T14:45:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="会理发的店小二">
+<meta name="twitter:description" content="App开发规范一.项目结构随着MVP设计模式的流行,就默认采用下面两种项目结构.  适合小项目 app——Application Activity Fragment  Presenter等的顶级父类 config——API,常量表等 model——数据层 entities——数据模型 presenter——MVP的P view——MVP的V utils——工具类集合 widget——各个可复用Vi">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3289067-010bc516e77b1f8e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="会理发的店小二" type="application/atom+xml">
   
@@ -141,133 +147,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-# App开发规范" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="App开发规范"><a href="#App开发规范" class="headerlink" title="App开发规范"></a>App开发规范</h1><h2 id="一-项目结构"><a href="#一-项目结构" class="headerlink" title="一.项目结构"></a>一.项目结构</h2><p>随着MVP设计模式的流行,就默认采用下面两种项目结构.</p>
+<ol>
+<li>适合小项目<ul>
+<li>app——Application Activity Fragment </li>
+<li>Presenter等的顶级父类</li>
+<li>config——API,常量表等</li>
+<li>model——数据层</li>
+<li>entities——数据模型</li>
+<li>presenter——MVP的P</li>
+<li>view——MVP的V</li>
+<li>utils——工具类集合</li>
+<li>widget——各个可复用View集合</li>
+<li>……</li>
+</ul>
+</li>
+<li>适合大项目<ul>
+<li>app</li>
+<li>config</li>
+<li>model <ul>
+<li>entities</li>
+</ul>
+</li>
+<li>module——将界面层以功能模块分配包<ul>
+<li>launch</li>
+<li>main</li>
+<li>account</li>
+<li>news</li>
+<li>music</li>
+<li>……….</li>
+</ul>
+</li>
+<li>……<br>&lt;<more>&gt;</more></li>
+</ul>
+</li>
+</ol>
+<p>##二.配置主题</p>
+<ol>
+<li><strong>先在color.xml中写好需要的颜色</strong><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;resources&gt;</div><div class="line">&lt;color name="Orange"&gt;#ff5722&lt;/color&gt;</div><div class="line">&lt;color name="DeepPurple"&gt;#673AB7&lt;/color&gt;</div><div class="line">&lt;color name="DeepPurple900"&gt;#311B92&lt;/color&gt;</div><div class="line">&lt;color name="White"&gt;#fff&lt;/color&gt;</div><div class="line">&lt;color name="Gray"&gt;#888888&lt;/color&gt;</div><div class="line">&lt;color name="Gray100"&gt;#dddddd&lt;/color&gt;</div><div class="line">&lt;color name="Gray600"&gt;#999999&lt;/color&gt;&lt;/resources&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>注意color.xml是配色表。应该是描述颜色而不是对字体颜色，背景颜色等的定义。这样能防止相近的颜色重复定义。而导致界面颜色不统一。</p>
+<ol>
+<li>在style.xml中定义主题<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar"&gt;</div><div class="line">&lt;!-- Customize your theme here. --&gt;</div><div class="line">&lt;item name="colorPrimary"&gt;@color/DeepPurple&lt;/item&gt;</div><div class="line">&lt;item name="colorPrimaryDark"&gt;@color/DeepPurple900&lt;/item&gt;</div><div class="line">&lt;item name="colorAccent"&gt;@color/Orange&lt;/item&gt;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;style name="AppTheme" parent="AppTheme.Base"&gt;&lt;/style&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在res目录下，创建一个values-v21目录，再创建一个style.xml:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> &lt;style name="AppTheme" parent="AppTheme.Base"&gt;</div><div class="line">&lt;item name="android:windowDrawsSystemBarBackgrounds"&gt;true&lt;/item&gt;</div><div class="line">&lt;item name="android:statusBarColor"&gt;?colorPrimaryDark&lt;/item&gt;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<p>然后在AndroidManifest.xml文件中修改application的theme属性为上面定义的AppTheme.即可实现沉浸式状态栏。</p>
+<h2 id="三-配置Gradle"><a href="#三-配置Gradle" class="headerlink" title="三.配置Gradle"></a>三.配置Gradle</h2><p>某些SDK运行时需要检查签名是否正确。所以在debug模式时也必须用正式KEY签名。而把签名放进版本控制不是明智的做法。所以推荐下面的做法：<br>在app的gradle加入下面代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Properties props = <span class="keyword">new</span> Properties()</div><div class="line">props.load(<span class="keyword">new</span> FileInputStream(file(<span class="string">"signing.properties"</span>)))</div><div class="line">android &#123;</div><div class="line">signingConfigs &#123;</div><div class="line">release&#123;</div><div class="line">keyAlias props[<span class="string">'KEY_ALIAS'</span>]</div><div class="line">keyPassword props[<span class="string">'KEY_PASSWORD'</span>]</div><div class="line"><span class="function">storeFile <span class="title">file</span><span class="params">(props[<span class="string">'KEYSTORE_FILE'</span>])</span></span></div><div class="line">storePassword props['KEYSTORE_PASSWORD']</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">buildTypes &#123;</div><div class="line">release &#123;</div><div class="line">signingConfig signingConfigs.release&#125;</div><div class="line">debug &#123;signingConfig signingConfigs.release</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在app的gradle文件同级目录新建signing.properties文件，里面填入你的key的相应信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">KEYSTORE_FILE = </div><div class="line">KEYSTORE_FILE = C:\\Users\\Mr.Jude\\Documents\\Android\\HelloWorld.jks</div><div class="line">KEYSTORE_PASSWORD = xxxxxx</div><div class="line">KEY_ALIAS = xxxxxx</div><div class="line">KEY_PASSWORD = xxxxxx</div></pre></td></tr></table></figure></p>
+<p>将signing.properties添加进忽略目录。<br>其他人pull下来代码后。自己新建signing.properties填入相应信息后即可编译成功。</p>
+<h2 id="四-编码规范"><a href="#四-编码规范" class="headerlink" title="四.编码规范"></a>四.编码规范</h2><p>为了避免合作开发写的代码风格迥异,做出下面的编码规范<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">所有Activity继承BaseActivity</div><div class="line">所有Fragment继承BaseFragment</div><div class="line">所有Presenter继承BasePresenter</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>这样利于生命周期管理,也利于全局修改.</p>
+<ol>
+<li><p>类名的定义<br>所有java类都必须遵循大驼峰规则,如下所示:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AccountFragment</div><div class="line">UserDetailActivity</div><div class="line">UserAdater</div><div class="line">.....</div></pre></td></tr></table></figure>
+</li>
+<li><p>变量命名</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mAdapter</div><div class="line">mUser</div><div class="line">mPassWord</div><div class="line">...</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以m开头,小驼峰规则.例mAdapter使用时按一个m全都出来了</p>
+<ol>
+<li>方法命名<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">login();</div><div class="line">showView();</div><div class="line">loading();</div><div class="line">...</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>小驼峰规则,通俗易懂,与其起好名字不如写好注释</p>
+<ol>
+<li>资源的文件的命名<br><strong>layout命名</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">activity_collection</div><div class="line">fragment_account</div><div class="line">item_person</div><div class="line">include_toolbar</div><div class="line">view_progress</div><div class="line">...</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>不过对于庞大项目的开发,近百个activity开头的layout列表还是会眼瞎,所以那种情况会在前面加上模块名.<br><strong> id命名</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">btn_send</div><div class="line">tv_name</div><div class="line">list_persons</div><div class="line">et_password</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>然后用butterknife的插件生成变量会自动将下划线变成驼峰命<br>更多命名规范可以参考<a href="http://blog.csdn.net/vipzjyno1/article/details/23542617" target="_blank" rel="external">Android 命名规范 （提高代码可以读性）</a>这一篇文章.</p>
+<h2 id="五-注释规范"><a href="#五-注释规范" class="headerlink" title="五.注释规范"></a>五.注释规范</h2><ul>
+<li>1.注释格式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>、单行(single-line)注释：<span class="string">"//......"</span></div><div class="line"><span class="number">2</span>、块(block)注释：<span class="string">"/*......*/"</span></div><div class="line"><span class="number">3</span>、文档注释：<span class="string">"/**......*/"</span></div><div class="line"><span class="number">4</span>、javadoc 注释标签语法</div><div class="line"><span class="meta">@author</span>   对类的说明 标明开发该类模块的作者</div><div class="line"><span class="meta">@version</span>   对类的说明 标明该类模块的版本</div><div class="line"><span class="meta">@see</span>     对类、属性、方法的说明 参考转向，也就是相关主题</div><div class="line"><span class="meta">@param</span>    对方法的说明 对方法中某参数的说明</div><div class="line"><span class="meta">@return</span>   对方法的说明 对方法返回值的说明</div><div class="line"><span class="meta">@exception</span>  对方法的说明 对方法可能抛出的异常进行说明</div></pre></td></tr></table></figure>
+<ul>
+<li>2.参考举例<br>类（接口）注释<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 类的描述</div><div class="line">* <span class="doctag">@author</span> Administrator</div><div class="line">* <span class="doctag">@Time</span> 2012-11-2014:49:01</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> classTest extends Button &#123;</div><div class="line">  ......</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>构造方法注释<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Button</span> </span>&#123;</div><div class="line">  <span class="comment">/**</span></div><div class="line">   * 构造方法 的描述</div><div class="line">   * <span class="doctag">@param</span> name</div><div class="line">   *       按钮的上显示的文字</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(String name)</span></span>&#123;</div><div class="line">     ......</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方法注释<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">   * 为按钮添加颜色</div><div class="line">   * <span class="doctag">@param</span> color 按钮的颜色</div><div class="line">   * <span class="doctag">@return</span></div><div class="line">   * <span class="doctag">@exception</span>  (方法有异常的话加)</div><div class="line">   * <span class="doctag">@author</span> Administrator</div><div class="line">   * <span class="doctag">@Time</span>2012-11-20 15:02:29</div><div class="line">   */</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="title">voidaddColor</span><span class="params">(String color)</span></span>&#123;</div><div class="line">    ......</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>全局变量注释<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></div><div class="line">   <span class="keyword">implements</span> <span class="title">Java</span>.<span class="title">io</span>.<span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;,<span class="title">CharSequence</span></div><div class="line">&#123;</div><div class="line">   <span class="comment">/** The value is used for characterstorage. */</span></div><div class="line">   <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">char</span> value[];</div><div class="line">   <span class="comment">/** The offset is the first index of thestorage that is used. */</span></div><div class="line">   <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> offset;</div><div class="line">   <span class="comment">/** The count is the number of charactersin the String. */</span></div><div class="line">   <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> count;</div><div class="line">   <span class="comment">/** Cache the hash code for the string */</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> hash; <span class="comment">// Default to 0</span></div><div class="line">......</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>字段/属性注释<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmailBody</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</div><div class="line">   <span class="keyword">private</span> String id;</div><div class="line">   <span class="keyword">private</span> String senderName;<span class="comment">//发送人姓名</span></div><div class="line">   <span class="keyword">private</span> String title;<span class="comment">//不能超过120个中文字符</span></div><div class="line">   <span class="keyword">private</span> String content;<span class="comment">//邮件正文</span></div><div class="line">   <span class="keyword">private</span> String attach;<span class="comment">//附件，如果有的话</span></div><div class="line">   <span class="keyword">private</span> String totalCount;<span class="comment">//总发送人数</span></div><div class="line">   <span class="keyword">private</span> String successCount;<span class="comment">//成功发送的人数</span></div><div class="line">   <span class="keyword">private</span> Integer isDelete;<span class="comment">//0不删除 1删除</span></div><div class="line">   <span class="keyword">private</span> Date createTime;<span class="comment">//目前不支持定时 所以创建后即刻发送</span></div><div class="line">   privateSet&lt;EmailList&gt; EmailList;</div><div class="line">......</div></pre></td></tr></table></figure></p>
+<p>##六.编程规范</p>
+<ul>
+<li>源文件编码格式为 UTF-8。</li>
+<li>java代码中不出现中文，最多注释中可以出现中文</li>
+<li>服务端可以实现的，就不要放在客户端</li>
+<li>引用第三方库要慎重，避免应用大容量的第三方库，导致客户端包非常大</li>
+<li>处理应用全局异常和错误，将错误以邮件的形式发送给服务端</li>
+<li>图片的.9处理</li>
+<li>使用静态变量方式实现界面间共享要慎重</li>
+<li>单元测试（逻辑测试、界面测试）</li>
+<li>不要重用父类的handler，对应一个类的handler也不应该让其子类用到，否则会导致message.what冲突</li>
+<li>activity中在一个View.OnClickListener中处理所有的逻辑</li>
+<li>strings.xml中使用%1$s实现字符串的通配<br>数据一定要效验，例如字符型转数字型，如果转换失败一定要有缺省值；服务端响应数据是否有效判断</li>
+<li>对于未完成的方法，使用TODO加以标记<br>若功能已完成，但存在效率等潜在问题时，使用XXX加以标记</li>
+<li>若代码存在严重问题或仅用于调试，使用FIXME加以标记</li>
+<li>values目录下文件名称较固定，不得随意更改</li>
+</ul>
+<p>##七.煽情<br>写到最后都会来一波煽情,但是我是拒绝的,但是又显得很没有逼格,最后我只好拿出我的终极必杀”一切问题都是浮云”,来结束这篇文章.<br>终极必杀:一切问题都是浮云</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3289067-010bc516e77b1f8e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="必杀技.jpg"><br>另外本人对扯蛋有独到见解,欢迎前来<a href="https://littleiii.github.io" target="_blank" rel="external">本人博客</a>扯蛋,我有酒,就差你的故事了</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# 代理模式/" class="archive-article-date">
-  	<time datetime="2017-06-26T15:03:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/26/# App开发规范/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/java注解/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:51:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# App开发规范/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:27:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-26T13:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/26/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -290,8 +398,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

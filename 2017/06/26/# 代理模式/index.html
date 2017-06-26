@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 会理发的店小二</title>
+  <title>会理发的店小二</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="代理模式##什么是代理模式?代理模式的定义：为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，一个对象不适合或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用。通俗的的理解:我们在租房子的时候回去找中介，为什么呢？因为你对该地区房屋的信息掌握的不够全面，希望找一个更熟悉的人去帮你做，此处的代理就是这个意思。再如我们有的时候打官司， 我们需要请律师， 因为律师在">
+<meta property="og:type" content="article">
 <meta property="og:title" content="会理发的店小二">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/# 代理模式/index.html">
 <meta property="og:site_name" content="会理发的店小二">
+<meta property="og:description" content="代理模式##什么是代理模式?代理模式的定义：为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，一个对象不适合或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用。通俗的的理解:我们在租房子的时候回去找中介，为什么呢？因为你对该地区房屋的信息掌握的不够全面，希望找一个更熟悉的人去帮你做，此处的代理就是这个意思。再如我们有的时候打官司， 我们需要请律师， 因为律师在">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-85790a814283299d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-cd562d0690bc03dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-26T15:03:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="会理发的店小二">
+<meta name="twitter:description" content="代理模式##什么是代理模式?代理模式的定义：为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，一个对象不适合或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用。通俗的的理解:我们在租房子的时候回去找中介，为什么呢？因为你对该地区房屋的信息掌握的不够全面，希望找一个更熟悉的人去帮你做，此处的代理就是这个意思。再如我们有的时候打官司， 我们需要请律师， 因为律师在">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3289067-85790a814283299d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="会理发的店小二" type="application/atom+xml">
   
@@ -141,133 +148,167 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-# 代理模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h1><p>##什么是代理模式?<br>代理模式的定义：为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，一个对象不适合或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用。<br>通俗的的理解:我们在租房子的时候回去找中介，为什么呢？因为你对该地区房屋的信息掌握的<br>不够全面，希望找一个更熟悉的人去帮你做，此处的代理就是这个意思。再如我们有的时候打<br>官司， 我们需要请律师， 因为律师在法律方面有专长， 可以替我们进行操作， 表达我们的想法。</p>
+<h2 id="代理模式的结构图"><a href="#代理模式的结构图" class="headerlink" title="代理模式的结构图"></a>代理模式的结构图</h2><p><img src="http://upload-images.jianshu.io/upload_images/3289067-85790a814283299d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代理模式.png"><br>从上图我们清楚的可以看出:</p>
+<ol>
+<li><strong>代理类</strong>和<strong>委托类</strong>分别实现了<strong>接口</strong></li>
+<li><strong>代理类</strong>依赖<strong>委托类</strong>(说白了就是持有委托类的引用)</li>
+</ol>
+<h2 id="代理模式的实现"><a href="#代理模式的实现" class="headerlink" title="代理模式的实现"></a>代理模式的实现</h2><p>为加深印象,下面将以故事的形式将代理模式展现出来.先交代一下背景,有一天,小明同学(无辜的小明)想买i7的cpu,但是害怕被宰,所以找到了我(万能的我),让我帮忙去讨价还价.他给了我最高的价格1500rmb.<br>下面我们分四步进行实现.</p>
+<ol>
+<li><p>编写接口<br> 我们先编写一个消费者的接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 消费者</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Consumer</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 购物</div><div class="line">     * <span class="doctag">@param</span> product 商品</div><div class="line">     * <span class="doctag">@param</span> minPrice 卖家给出的最低价格</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">shop</span><span class="params">(String product,<span class="keyword">int</span> minPrice)</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>编写委托类<br> 其次我们再编写Person类去实现消费者接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Consumer</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line">    <span class="comment">/**商品*/</span></div><div class="line">    <span class="keyword">private</span> String product;</div><div class="line">    <span class="comment">/**能接受的最高价格*/</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxPrice;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, String product, <span class="keyword">int</span> maxPrice)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">        <span class="keyword">this</span>.product = product;</div><div class="line">        <span class="keyword">this</span>.maxPrice = maxPrice;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getProduct</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> product;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setProduct</span><span class="params">(String product)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.product = product;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMaxPrice</span><span class="params">(<span class="keyword">int</span> maxPrice)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.maxPrice = maxPrice;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxPrice</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> maxPrice;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">shop</span><span class="params">(String product, <span class="keyword">int</span> minPrice)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (minPrice&lt;=maxPrice)&#123;<span class="comment">//卖家给出的最低价格小于能承受的价格</span></div><div class="line">            System.out.println(name +<span class="string">"花了"</span>+minPrice+<span class="string">"购买了"</span> + product);</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>编写代理类<br> 最后们再编写代理类,这也是代理模式的核心,前方高能,大家要坐稳了 </p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonProxy</span> <span class="keyword">implements</span> <span class="title">Consumer</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Person person;</div><div class="line">    <span class="comment">/**谈判次数*/</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> bargainingNum=<span class="number">0</span>;</div><div class="line">    <span class="comment">/**讨价还价后的价格*/</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> bargainingPrice = <span class="number">0</span>;</div><div class="line">    <span class="keyword">private</span> String name;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PersonProxy</span><span class="params">(Person person, String name)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.person = person;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">shop</span><span class="params">(String product, <span class="keyword">int</span> minPrice)</span> </span>&#123;</div><div class="line">       <span class="keyword">if</span> (minPrice&lt;=bargaining(minPrice))&#123;</div><div class="line">           <span class="comment">//如果给出的价格小于等于讨价还价后的价格就成交</span></div><div class="line">           person.shop(product,minPrice);</div><div class="line">           System.out.println(<span class="string">"讨价还价了"</span>+bargainingNum+<span class="string">"次,"</span>+person.getName() + <span class="string">"和"</span> + name + <span class="string">"开心的走了"</span>);</div><div class="line">           <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 讨价还价</div><div class="line">     * <span class="doctag">@param</span> minPrice</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">bargaining</span><span class="params">(<span class="keyword">int</span> minPrice)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">switch</span> (bargainingNum) &#123;</div><div class="line">            <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">               <span class="keyword">if</span> ( minPrice&lt;person.getMaxPrice()-<span class="number">500</span>)&#123;</div><div class="line">                   System.out.println(<span class="string">"价格合理,成交"</span>);</div><div class="line">               &#125;<span class="keyword">else</span> &#123;</div><div class="line">                    System.out.println(minPrice+<span class="string">",太贵了请在给出合理的价格"</span>);</div><div class="line">               &#125;</div><div class="line">                bargainingPrice=person.getMaxPrice()-<span class="number">500</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">if</span> ( minPrice&lt;person.getMaxPrice()-<span class="number">300</span>)&#123;</div><div class="line">                    System.out.println(<span class="string">"价格合理,成交"</span>);</div><div class="line"></div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                     System.out.println(minPrice+<span class="string">",太贵了请在给出合理的价格"</span>);</div><div class="line">                &#125;</div><div class="line">                bargainingPrice=person.getMaxPrice()-<span class="number">300</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">                <span class="keyword">if</span> ( minPrice&lt;person.getMaxPrice()-<span class="number">200</span>)&#123;</div><div class="line">                    System.out.println(<span class="string">"价格合理,成交"</span>);</div><div class="line"></div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                     System.out.println(minPrice+<span class="string">",太贵了请在给出合理的价格"</span>);</div><div class="line">                &#125;</div><div class="line">                bargainingPrice=person.getMaxPrice()-<span class="number">200</span>;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">                <span class="keyword">if</span> ( minPrice&lt;=person.getMaxPrice())&#123;</div><div class="line">                    System.out.println(<span class="string">"价格合理,成交"</span>);</div><div class="line">                    bargainingPrice=minPrice;</div><div class="line">                &#125;<span class="keyword">else</span> &#123;</div><div class="line">                    System.out.println(<span class="string">"不买了!"</span>);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        bargainingNum++;</div><div class="line">        <span class="keyword">return</span> bargainingPrice;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4.开始测试 </p>
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+        Collection collection=<span class="keyword">new</span> MyCollection();
+        Iterator iterator=<span class="keyword">new</span> MyIterator(collection);
+
+        <span class="keyword">while</span> (iterator.hasNext()) {
+            System.out.print(iterator.next()+<span class="string">" "</span>);
+        }
+    }
+}
+</code></pre>
+<p>测试结果:</p>
+<pre><code class="java"><span class="number">1700</span>,太贵了请在给出合理的价格
+<span class="number">1600</span>,太贵了请在给出合理的价格
+<span class="number">1500</span>,太贵了请在给出合理的价格
+价格合理,成交
+小明花了<span class="number">1400</span>购买了i7cup
+讨价还价了<span class="number">4</span>次,小明和会理发的店小二开心的走了
+</code></pre>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语:"></a>结语:</h2><p><img src="http://upload-images.jianshu.io/upload_images/3289067-cd562d0690bc03dc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="写个屁代码.jpg"><br>开个玩笑,俗话说的好,万变不离其宗,这里两点要切记,这也是代理模式的核心:</p>
+<ol>
+<li>代理类和委托类要分别实现共同接口.</li>
+<li>代理类要持有委托类的引用.</li>
+<li><strong>代理类实现接口方法</strong>里要<strong>调用委托类实现的方法</strong>(可以在调用委托类方法前和后编写代理类自己的逻辑).<br>另外本人对扯蛋有独到见解,欢迎前来<a href="https://littleiii.github.io" target="_blank" rel="external">本人博客</a>扯蛋,我有酒,就差你的故事了</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# 代理模式/" class="archive-article-date">
-  	<time datetime="2017-06-26T15:03:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/26/# 代理模式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/java注解/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:51:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/26/java注解/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# App开发规范/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:27:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-26T13:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/26/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -290,8 +331,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

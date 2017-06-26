@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 会理发的店小二</title>
+  <title>会理发的店小二</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="#java注解 #前言:无(说一堆也没用) ##注解得图解:  注解的原理  传送门 ##使用说明 下面我们举例现实生活中的水果的收购案例(撸代码)其中FruitName (用于注解水果的名称)就可注解描述域.123456789/** 水果名称 */@Target(ElementType.FIELD)@Retention(RetentionPolicy.RUNTIME)@Documentedpub">
+<meta property="og:type" content="article">
 <meta property="og:title" content="会理发的店小二">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/java注解/index.html">
 <meta property="og:site_name" content="会理发的店小二">
+<meta property="og:description" content="#java注解 #前言:无(说一堆也没用) ##注解得图解:  注解的原理  传送门 ##使用说明 下面我们举例现实生活中的水果的收购案例(撸代码)其中FruitName (用于注解水果的名称)就可注解描述域.123456789/** 水果名称 */@Target(ElementType.FIELD)@Retention(RetentionPolicy.RUNTIME)@Documentedpub">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-2a5dae169545e9a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-196c3de34295bd92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-26T15:04:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="会理发的店小二">
+<meta name="twitter:description" content="#java注解 #前言:无(说一堆也没用) ##注解得图解:  注解的原理  传送门 ##使用说明 下面我们举例现实生活中的水果的收购案例(撸代码)其中FruitName (用于注解水果的名称)就可注解描述域.123456789/** 水果名称 */@Target(ElementType.FIELD)@Retention(RetentionPolicy.RUNTIME)@Documentedpub">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3289067-2a5dae169545e9a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="会理发的店小二" type="application/atom+xml">
   
@@ -141,133 +148,149 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java注解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#java注解</p>
+<p>#前言:无(说一堆也没用)</p>
+<p>##注解得图解:<br><img src="http://upload-images.jianshu.io/upload_images/3289067-2a5dae169545e9a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="部分1.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3289067-196c3de34295bd92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="部分2.png"></p>
+<h2 id="注解的原理"><a href="#注解的原理" class="headerlink" title="注解的原理"></a>注解的原理</h2><p>  <a href="http://blog.csdn.net/lylwo317/article/details/52163304" target="_blank" rel="external">传送门</a></p>
+<p>##使用说明</p>
+<h3 id="下面我们举例现实生活中的水果的收购案例-撸代码"><a href="#下面我们举例现实生活中的水果的收购案例-撸代码" class="headerlink" title="下面我们举例现实生活中的水果的收购案例(撸代码)"></a>下面我们举例现实生活中的水果的收购案例(撸代码)</h3><p>其中FruitName (用于注解水果的名称)就可注解描述域.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> 水果名称 </div><div class="line">*/</div><div class="line"><span class="meta">@Target</span>(ElementType.FIELD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> FruitName &#123; </div><div class="line"><span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中FruitColor (用于注解水果的颜色)<br>default 是指默认使用的值(下面的也是如此)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 注解水果颜色</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.FIELD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> FruitColor &#123;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 颜色枚举</div><div class="line">	 */</div><div class="line">	<span class="keyword">public</span> <span class="keyword">enum</span> Color &#123;</div><div class="line">		BULE, RED, GREEN</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 颜色属性</div><div class="line">	 */</div><div class="line">	<span class="function">Color <span class="title">fruitColor</span><span class="params">()</span> <span class="keyword">default</span> Color.GREEN</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中FruitProvider(用于注解供应商)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 水果供应者注解</div><div class="line"> */</div><div class="line"><span class="meta">@Target</span>(ElementType.FIELD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> FruitProvider &#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 供应商编号</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">id</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 供应商名称</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">    </div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 供应商地址</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">address</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="这时-没有接触过注解的有观众开始说了-”说了使用说明-这都是什么鬼啊-你写了这么多这个干吗啊-”"><a href="#这时-没有接触过注解的有观众开始说了-”说了使用说明-这都是什么鬼啊-你写了这么多这个干吗啊-”" class="headerlink" title="这时,没有接触过注解的有观众开始说了:”说了使用说明,这都是什么鬼啊,你写了这么多这个干吗啊?”."></a>这时,没有接触过注解的有观众开始说了:”说了使用说明,这都是什么鬼啊,你写了这么多这个干吗啊?”.</h5><h5 id="大兄弟你先别急-把手中的砖头放下-有话好好说嘛-马上就开始说他的使用了"><a href="#大兄弟你先别急-把手中的砖头放下-有话好好说嘛-马上就开始说他的使用了" class="headerlink" title="大兄弟你先别急,把手中的砖头放下,有话好好说嘛,马上就开始说他的使用了."></a>大兄弟你先别急,把手中的砖头放下,有话好好说嘛,马上就开始说他的使用了.</h5><h2 id="自定义注解的使用"><a href="#自定义注解的使用" class="headerlink" title="自定义注解的使用"></a>自定义注解的使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 苹果</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> Administrator 开始使用注解</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apple</span> </span>&#123;</div><div class="line">  <span class="comment">//使用了咱们刚才自定义的注解"FruitName"</span></div><div class="line">	<span class="meta">@FruitName</span>(value = <span class="string">"富士"</span>)</div><div class="line">	<span class="keyword">private</span> String appleName;</div><div class="line">  <span class="comment">//使用了咱们刚才自定义的注解"FruitColor"</span></div><div class="line">	<span class="meta">@FruitColor</span>(fruitColor = Color.RED)</div><div class="line">	<span class="keyword">private</span> String appleColor;</div><div class="line">  <span class="comment">//使用了咱们刚才自定义的注解"FruitProvider"</span></div><div class="line">	<span class="meta">@FruitProvider</span>(id = <span class="number">1</span>, name = <span class="string">"刘氏红富士集团"</span>, </div><div class="line">        address = <span class="string">"河北省石家庄市槐北路路01号红富士大厦"</span>)</div><div class="line">	<span class="keyword">private</span> String appleProvider;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAppleColor</span><span class="params">(String appleColor)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.appleColor = appleColor;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAppleColor</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> appleColor;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAppleName</span><span class="params">(String appleName)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.appleName = appleName;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAppleName</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> appleName;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAppleProvider</span><span class="params">(String appleProvider)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.appleProvider = appleProvider;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAppleProvider</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> appleProvider;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="这时聪明的大兄弟们开始发问了-”那你怎么使用你注解里面的值啊"><a href="#这时聪明的大兄弟们开始发问了-”那你怎么使用你注解里面的值啊" class="headerlink" title="这时聪明的大兄弟们开始发问了:”那你怎么使用你注解里面的值啊,"></a>这时聪明的大兄弟们开始发问了:”那你怎么使用你注解里面的值啊,</h5><h5 id="比如’富士’-’-RED’-你运行的时候-就显示了吗-”"><a href="#比如’富士’-’-RED’-你运行的时候-就显示了吗-”" class="headerlink" title="比如’富士’ ,’ RED’,?,你运行的时候,就显示了吗?”"></a>比如’富士’ ,’ RED’,?,你运行的时候,就显示了吗?”</h5><h5 id="回答当然不是了-下面我们要引入一个概念注解处理器-才能解决这个问题"><a href="#回答当然不是了-下面我们要引入一个概念注解处理器-才能解决这个问题" class="headerlink" title="回答当然不是了,下面我们要引入一个概念注解处理器,才能解决这个问题."></a>回答当然不是了,下面我们要引入一个概念注解处理器,才能解决这个问题.</h5><p>##注解处理器<br>注解处理器说明:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　　如果没有用来读取注解的方法和工作，那么注解也就不会比注释更有用处了。使用注解的过程中，很重要的一部分就是创建于使用注解处理器。</div><div class="line">Java SE5扩展了反射机制的API，以帮助程序员快速的构造自定义注解处理器。</div></pre></td></tr></table></figure></p>
+<p>注解处理器类库说明:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    Java使用Annotation接口来代表程序元素前面的注解，该接口是所Annotatio类型的父接口 除此之外，Java在java.lang.reflect 包下新增了AnnotatedElement接口，</div><div class="line">该接口代表程序中可以接受注解的程序元素，该接口主要有如下几个实现类：</div><div class="line">Class：类定义　　</div><div class="line">Constructor：构造器定义　　</div><div class="line">Field：累的成员变量定义　　</div><div class="line">Method：类的方法定义　　</div><div class="line">Package：类的包定义</div></pre></td></tr></table></figure></p>
+<p>去实践吧<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 水果工具</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> Administrator 使用注解器</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FruitInfoUtil</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getFruitInfo</span><span class="params">(Class&lt;?&gt; clazz)</span> </span>&#123;</div><div class="line"></div><div class="line">		String strFruitName = <span class="string">" 水果名称："</span>;</div><div class="line">		String strFruitColor = <span class="string">" 水果颜色："</span>;</div><div class="line">		String strFruitProvicer = <span class="string">"供应商信息："</span>;</div><div class="line">		<span class="comment">// 找到所有Annotation所修饰的对象范围</span></div><div class="line">		Field[] fields = clazz.getDeclaredFields();</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (Field field : fields) &#123;</div><div class="line">			<span class="keyword">if</span> (field.isAnnotationPresent(FruitName.class)) &#123;</div><div class="line">                    <span class="comment">//使用FruitName注解</span></div><div class="line">				FruitName fruitName = (FruitName) field</div><div class="line">						.getAnnotation(FruitName.class);</div><div class="line">				strFruitName = strFruitName + fruitName.value();</div><div class="line">				System.out.println(strFruitName);</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (field.isAnnotationPresent(FruitColor.class)) &#123;</div><div class="line">                   <span class="comment">//使用FruitColor注解</span></div><div class="line">				FruitColor fruitColor = (FruitColor) field</div><div class="line">						.getAnnotation(FruitColor.class);</div><div class="line">				strFruitColor = strFruitColor</div><div class="line">						+ fruitColor.fruitColor().toString();</div><div class="line">				System.out.println(strFruitColor);</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (field.isAnnotationPresent(FruitProvider.class)) &#123;</div><div class="line">                        <span class="comment">//使用FruitProvider注解</span></div><div class="line">				FruitProvider fruitProvider = (FruitProvider) field</div><div class="line">						.getAnnotation(FruitProvider.class);</div><div class="line">				strFruitProvicer = <span class="string">" 供应商编号："</span> + fruitProvider.id() + <span class="string">" 供应商名称："</span></div><div class="line">						+ fruitProvider.name() + <span class="string">" 供应商地址："</span></div><div class="line">						+ fruitProvider.address();</div><div class="line">				System.out.println(strFruitProvicer);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>说了这么多是时候检验成果了<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">	  FruitInfoUtil.getFruitInfo(Apple.class);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">水果名称：富士</div><div class="line">水果颜色：RED</div><div class="line">供应商编号：1 供应商名称：刘氏红富士集团 供应商地址：河北省石家庄市槐北路路01号红富士大厦</div></pre></td></tr></table></figure></p>
+<p>###大功告成(另外小弟对扯蛋我有独到见解,欢迎大家前来扯蛋)</p>
+<p>#参考文章<br><a href="http://blog.csdn.net/u012227846/article/details/42737981" target="_blank" rel="external">Java Annotation及注解原理简析</a><br><a href="http://blog.csdn.net/lylwo317/article/details/52163304" target="_blank" rel="external">Java注解（Annotation）原理详解</a><br><a href="http://www.cnblogs.com/liuweiming/articles/2285841.html" target="_blank" rel="external">annotation 原理学习总结</a><br><a href="http://www.cnblogs.com/peida/archive/2013/04/23/3036035.html" target="_blank" rel="external">深入理解Java：注解（Annotation）基本概念</a><br><a href="http://www.cnblogs.com/whoislcj/p/5671622.html" target="_blank" rel="external">Java学习之注解Annotation实现原理</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# 代理模式/" class="archive-article-date">
-  	<time datetime="2017-06-26T15:03:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/06/26/java注解/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/java注解/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:51:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:49:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2017/06/26/# 代理模式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/# App开发规范/" class="archive-article-date">
-  	<time datetime="2017-06-26T14:27:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/26/hello-world/" class="archive-article-date">
-  	<time datetime="2017-06-26T13:53:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/26/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -290,8 +313,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
