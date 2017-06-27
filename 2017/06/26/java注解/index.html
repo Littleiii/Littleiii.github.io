@@ -15,18 +15,19 @@
 
 
 
-<meta name="description" content="#java注解 #前言:无(说一堆也没用) ##注解得图解:  注解的原理  传送门 ##使用说明 下面我们举例现实生活中的水果的收购案例(撸代码)其中FruitName (用于注解水果的名称)就可注解描述域.123456789/** 水果名称 */@Target(ElementType.FIELD)@Retention(RetentionPolicy.RUNTIME)@Documentedpub">
+<meta name="description" content="java注解前言:无(说一堆也没用)注解得图解:">
+<meta name="keywords" content="反射,注解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="会理发的店小二">
-<meta property="og:url" content="http://yoursite.com/2017/06/26/java注解/index.html">
+<meta property="og:title" content="java注解">
+<meta property="og:url" content="https://littleiii.github.io/2017/06/26/java注解/index.html">
 <meta property="og:site_name" content="会理发的店小二">
-<meta property="og:description" content="#java注解 #前言:无(说一堆也没用) ##注解得图解:  注解的原理  传送门 ##使用说明 下面我们举例现实生活中的水果的收购案例(撸代码)其中FruitName (用于注解水果的名称)就可注解描述域.123456789/** 水果名称 */@Target(ElementType.FIELD)@Retention(RetentionPolicy.RUNTIME)@Documentedpub">
+<meta property="og:description" content="java注解前言:无(说一堆也没用)注解得图解:">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-2a5dae169545e9a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-196c3de34295bd92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-26T15:04:51.000Z">
+<meta property="og:updated_time" content="2017-06-27T01:36:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="会理发的店小二">
-<meta name="twitter:description" content="#java注解 #前言:无(说一堆也没用) ##注解得图解:  注解的原理  传送门 ##使用说明 下面我们举例现实生活中的水果的收购案例(撸代码)其中FruitName (用于注解水果的名称)就可注解描述域.123456789/** 水果名称 */@Target(ElementType.FIELD)@Retention(RetentionPolicy.RUNTIME)@Documentedpub">
+<meta name="twitter:title" content="java注解">
+<meta name="twitter:description" content="java注解前言:无(说一堆也没用)注解得图解:">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3289067-2a5dae169545e9a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -59,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>会理发的店小二</title>
+<title>java注解 | 会理发的店小二</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -184,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/io/">io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代理/">代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/反射/">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/注解/">注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a></li></ul>
                     </div>
                 </section>
                 
@@ -274,13 +275,36 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java注解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/反射/">反射</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注解/">注解</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#java注解</p>
-<p>#前言:无(说一堆也没用)</p>
-<p>##注解得图解:<br><img src="http://upload-images.jianshu.io/upload_images/3289067-2a5dae169545e9a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="部分1.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/3289067-196c3de34295bd92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="部分2.png"></p>
+        <h1 id="java注解"><a href="#java注解" class="headerlink" title="java注解"></a>java注解</h1><h1 id="前言-无-说一堆也没用"><a href="#前言-无-说一堆也没用" class="headerlink" title="前言:无(说一堆也没用)"></a>前言:无(说一堆也没用)</h1><h2 id="注解得图解"><a href="#注解得图解" class="headerlink" title="注解得图解:"></a>注解得图解:</h2><p><img src="http://upload-images.jianshu.io/upload_images/3289067-2a5dae169545e9a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="部分1.png"><br><a id="more"></a><br><img src="http://upload-images.jianshu.io/upload_images/3289067-196c3de34295bd92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="部分2.png"></p>
 <h2 id="注解的原理"><a href="#注解的原理" class="headerlink" title="注解的原理"></a>注解的原理</h2><p>  <a href="http://blog.csdn.net/lylwo317/article/details/52163304" target="_blank" rel="external">传送门</a></p>
 <p>##使用说明</p>
 <h3 id="下面我们举例现实生活中的水果的收购案例-撸代码"><a href="#下面我们举例现实生活中的水果的收购案例-撸代码" class="headerlink" title="下面我们举例现实生活中的水果的收购案例(撸代码)"></a>下面我们举例现实生活中的水果的收购案例(撸代码)</h3><p>其中FruitName (用于注解水果的名称)就可注解描述域.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> 水果名称 </div><div class="line">*/</div><div class="line"><span class="meta">@Target</span>(ElementType.FIELD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="meta">@Documented</span></div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> FruitName &#123; </div><div class="line"><span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -302,13 +326,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/06/26/java注解/"></a></p>
+        <p><span>本文标题:</span><a href="/2017/06/26/java注解/">java注解</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mr.liu</a></p>
         <p><span>发布时间:</span>2017-06-26, 22:51:17</p>
-        <p><span>最后更新:</span>2017-06-26, 23:04:51</p>
+        <p><span>最后更新:</span>2017-06-27, 09:36:32</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/06/26/java注解/" title="">http://yoursite.com/2017/06/26/java注解/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/06/26/java注解/　　作者: Mr.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/26/java注解/" title="java注解">https://littleiii.github.io/2017/06/26/java注解/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://littleiii.github.io/2017/06/26/java注解/　　作者: Mr.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -321,15 +345,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/06/26/# 代理模式/">
-                    
+                <a href="/2017/06/26/agency/">
+                    代理模式
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/">
-                    
+                <a href="/2017/06/26/java-reflect-io/">
+                    当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;
                 </a>
             </div>
         
@@ -341,7 +365,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注解的原理"><span class="toc-number">1.</span> <span class="toc-text">注解的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下面我们举例现实生活中的水果的收购案例-撸代码"><span class="toc-number">1.1.</span> <span class="toc-text">下面我们举例现实生活中的水果的收购案例(撸代码)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#这时-没有接触过注解的有观众开始说了-”说了使用说明-这都是什么鬼啊-你写了这么多这个干吗啊-”"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">这时,没有接触过注解的有观众开始说了:”说了使用说明,这都是什么鬼啊,你写了这么多这个干吗啊?”.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大兄弟你先别急-把手中的砖头放下-有话好好说嘛-马上就开始说他的使用了"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">大兄弟你先别急,把手中的砖头放下,有话好好说嘛,马上就开始说他的使用了.</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义注解的使用"><span class="toc-number">2.</span> <span class="toc-text">自定义注解的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#这时聪明的大兄弟们开始发问了-”那你怎么使用你注解里面的值啊"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">这时聪明的大兄弟们开始发问了:”那你怎么使用你注解里面的值啊,</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#比如’富士’-’-RED’-你运行的时候-就显示了吗-”"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">比如’富士’ ,’ RED’,?,你运行的时候,就显示了吗?”</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#回答当然不是了-下面我们要引入一个概念注解处理器-才能解决这个问题"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">回答当然不是了,下面我们要引入一个概念注解处理器,才能解决这个问题.</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java注解"><span class="toc-number">1.</span> <span class="toc-text">java注解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前言-无-说一堆也没用"><span class="toc-number">2.</span> <span class="toc-text">前言:无(说一堆也没用)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注解得图解"><span class="toc-number">2.1.</span> <span class="toc-text">注解得图解:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注解的原理"><span class="toc-number">2.2.</span> <span class="toc-text">注解的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下面我们举例现实生活中的水果的收购案例-撸代码"><span class="toc-number">2.2.1.</span> <span class="toc-text">下面我们举例现实生活中的水果的收购案例(撸代码)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#这时-没有接触过注解的有观众开始说了-”说了使用说明-这都是什么鬼啊-你写了这么多这个干吗啊-”"><span class="toc-number">2.2.1.0.1.</span> <span class="toc-text">这时,没有接触过注解的有观众开始说了:”说了使用说明,这都是什么鬼啊,你写了这么多这个干吗啊?”.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#大兄弟你先别急-把手中的砖头放下-有话好好说嘛-马上就开始说他的使用了"><span class="toc-number">2.2.1.0.2.</span> <span class="toc-text">大兄弟你先别急,把手中的砖头放下,有话好好说嘛,马上就开始说他的使用了.</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义注解的使用"><span class="toc-number">2.3.</span> <span class="toc-text">自定义注解的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#这时聪明的大兄弟们开始发问了-”那你怎么使用你注解里面的值啊"><span class="toc-number">2.3.0.0.1.</span> <span class="toc-text">这时聪明的大兄弟们开始发问了:”那你怎么使用你注解里面的值啊,</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#比如’富士’-’-RED’-你运行的时候-就显示了吗-”"><span class="toc-number">2.3.0.0.2.</span> <span class="toc-text">比如’富士’ ,’ RED’,?,你运行的时候,就显示了吗?”</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#回答当然不是了-下面我们要引入一个概念注解处理器-才能解决这个问题"><span class="toc-number">2.3.0.0.3.</span> <span class="toc-text">回答当然不是了,下面我们要引入一个概念注解处理器,才能解决这个问题.</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -377,7 +401,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| 会理发的店小二　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"java注解　| 会理发的店小二　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -411,7 +435,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/06/26/# 代理模式/" title="上一篇: ">
+            <a href="/2017/06/26/agency/" title="上一篇: 代理模式">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -419,13 +443,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" title="下一篇: ">
+            <a href="/2017/06/26/java-reflect-io/" title="下一篇: 当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/# 代理模式/"># 代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/">当"反射"遇到"IO"触发的"基情"</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/# App开发规范/"># App开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/agency/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/java-reflect-io/">当"反射"遇到"IO"触发的"基情"</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/App开发规范/">App开发规范</a></li></ul>
 
 
 
@@ -469,22 +493,6 @@
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
 
 
 

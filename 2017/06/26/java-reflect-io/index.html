@@ -15,18 +15,19 @@
 
 
 
-<meta name="description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密. 那他是怎么实现的?下面我们将使用三步走的战略,一步一步的破译Spring的机密 需要的材料   名称 说明     ObjectPool 对">
+<meta name="description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密.">
+<meta name="keywords" content="反射,io">
 <meta property="og:type" content="article">
-<meta property="og:title" content="会理发的店小二">
-<meta property="og:url" content="http://yoursite.com/2017/06/26/当"反射"遇到"IO"触发的"基情"/index.html">
+<meta property="og:title" content="当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;">
+<meta property="og:url" content="https://littleiii.github.io/2017/06/26/java-reflect-io/index.html">
 <meta property="og:site_name" content="会理发的店小二">
-<meta property="og:description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密. 那他是怎么实现的?下面我们将使用三步走的战略,一步一步的破译Spring的机密 需要的材料   名称 说明     ObjectPool 对">
+<meta property="og:description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密.">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-26T15:05:12.000Z">
+<meta property="og:updated_time" content="2017-06-27T01:26:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="会理发的店小二">
-<meta name="twitter:description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密. 那他是怎么实现的?下面我们将使用三步走的战略,一步一步的破译Spring的机密 需要的材料   名称 说明     ObjectPool 对">
+<meta name="twitter:title" content="当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;">
+<meta name="twitter:description" content="当”反射”遇到”IO”触发的”基情” 前言别看短,因为很精简 会有什么基情啊? 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密.">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -59,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>会理发的店小二</title>
+<title>当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot; | 会理发的店小二</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -184,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/io/">io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代理/">代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/反射/">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/注解/">注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a></li></ul>
                     </div>
                 </section>
                 
@@ -259,10 +260,10 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java-reflect-io" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" class="article-date">
+      <a href="/2017/06/26/java-reflect-io/" class="article-date">
       <time datetime="2017-06-26T14:49:53.000Z" itemprop="datePublished">2017-06-26</time>
 </a>
 
@@ -274,12 +275,38 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/java/">java</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/io/">io</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/反射/">反射</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
         <h1 id="当”反射”遇到”IO”触发的”基情”"><a href="#当”反射”遇到”IO”触发的”基情”" class="headerlink" title="当”反射”遇到”IO”触发的”基情”"></a>当”反射”遇到”IO”触发的”基情”</h1><p><img src="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表情.jpg"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>别看短,因为很精简</p>
-<h3 id="会有什么基情啊"><a href="#会有什么基情啊" class="headerlink" title="会有什么基情啊?"></a>会有什么基情啊?</h3><p> 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密.</p>
+<h3 id="会有什么基情啊"><a href="#会有什么基情啊" class="headerlink" title="会有什么基情啊?"></a>会有什么基情啊?</h3><p> 如果你是大神当你点进来的看的时候,你已经猜  的大概了,那就是Spring的核心机密(通过文件配置对象),为了满足一下好奇心,下文我们将一起简单的破译一下Spring的核心机密.<br><a id="more"></a></p>
 <h3 id="那他是怎么实现的"><a href="#那他是怎么实现的" class="headerlink" title="那他是怎么实现的?"></a>那他是怎么实现的?</h3><p>下面我们将使用三步走的战略,一步一步的破译Spring的机密</p>
 <h4 id="需要的材料"><a href="#需要的材料" class="headerlink" title="需要的材料"></a>需要的材料</h4><table>
 <thead>
@@ -336,7 +363,7 @@
 <li>从性能实用性上考虑,我们可以采用更高效的Java io Api,和使用xml代替txt文件等,这个就是仁者见仁智了.</li>
 <li>从扩展性上考虑,那设计模式再合适不过了,我们可以采用工厂和建造者等等设计模式去实现了,这个灵活性很高,需要对设计模式有一定的了解.</li>
 </ul>
-<p>通过一步步的分析,你现在是不是感慨很多东西也不是特别的困难,那就不要停留在感慨了,赶快动起你发财的小手敲代码吧.<br><img src="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表情.jpg"><br>另外本人对扯蛋有独到见解,欢迎前来<a href="https://littleiii.github.io" target="_blank" rel="external">本人博客</a>扯蛋,我有酒,就差你的故事了</p>
+<p>通过一步步的分析,你现在是不是感慨很多东西也不是特别的困难,那就不要停留在感慨了,赶快动起你发财的小手敲代码吧.<br><img src="http://upload-images.jianshu.io/upload_images/3289067-2741340d8193eb1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="表情.jpg"><br>另外本人对扯蛋有独到见解,欢迎前来<a href="https://littleiii.github.io">本人博客</a>扯蛋,我有酒,就差你的故事了</p>
 
       
     </div>
@@ -345,13 +372,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/"></a></p>
+        <p><span>本文标题:</span><a href="/2017/06/26/java-reflect-io/">当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mr.liu</a></p>
         <p><span>发布时间:</span>2017-06-26, 22:49:53</p>
-        <p><span>最后更新:</span>2017-06-26, 23:05:12</p>
+        <p><span>最后更新:</span>2017-06-27, 09:26:49</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/" title="">http://yoursite.com/2017/06/26/当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/06/26/当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;/　　作者: Mr.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/26/java-reflect-io/" title="当&quot;反射&quot;遇到&quot;IO&quot;触发的&quot;基情&quot;">https://littleiii.github.io/2017/06/26/java-reflect-io/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://littleiii.github.io/2017/06/26/java-reflect-io/　　作者: Mr.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -365,14 +392,14 @@
         
             <div id="article-nav-newer" class="article-nav-title">
                 <a href="/2017/06/26/java注解/">
-                    
+                    java注解
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/06/26/# App开发规范/">
-                    
+                <a href="/2017/06/26/App开发规范/">
+                    App开发规范
                 </a>
             </div>
         
@@ -420,7 +447,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| 会理发的店小二　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"当"反射"遇到"IO"触发的"基情"　| 会理发的店小二　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -454,7 +481,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/06/26/java注解/" title="上一篇: ">
+            <a href="/2017/06/26/java注解/" title="上一篇: java注解">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -462,13 +489,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/06/26/# App开发规范/" title="下一篇: ">
+            <a href="/2017/06/26/App开发规范/" title="下一篇: App开发规范">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/# 代理模式/"># 代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/当"反射"遇到"IO"触发的"基情"/">当"反射"遇到"IO"触发的"基情"</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/# App开发规范/"># App开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/agency/">代理模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/java注解/">java注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/java-reflect-io/">当"反射"遇到"IO"触发的"基情"</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/26/App开发规范/">App开发规范</a></li></ul>
 
 
 
@@ -512,22 +539,6 @@
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
 
 
 
