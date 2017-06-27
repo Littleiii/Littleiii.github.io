@@ -288,78 +288,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="hexo-注意"><a href="#hexo-注意" class="headerlink" title="hexo 注意"></a>hexo 注意</h2><ol>
+              <h2 id="hexo-注意"><a href="#hexo-注意" class="headerlink" title="hexo 注意"></a>hexo 注意</h2><ol>
 <li>注意要科学上网(翻墙)</li>
 <li>注意权限(加sudo)</li>
 <li>注意心脏(有心脏病者误入)</li>
 </ol>
-<p>&lt;!-more-&gt;</p>
-<h2 id="hexo-安装与准备"><a href="#hexo-安装与准备" class="headerlink" title="hexo 安装与准备"></a>hexo 安装与准备</h2><ol>
-<li>git</li>
-<li>node.js</li>
-<li>markdown编辑器</li>
-<li>gitcafe</li>
-<li>域名</li>
-</ol>
-<p>本篇不讲解以上5个内容,只是做个提醒.</p>
-<h2 id="hexo-常用命令"><a href="#hexo-常用命令" class="headerlink" title="hexo 常用命令"></a>hexo 常用命令</h2><ul>
-<li>安装和初始化</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli g	安装</div><div class="line">$ hexo init blog		<span class="comment">//初始化</span></div><div class="line">$ cd blog		</div><div class="line">$ npm install		导入插件</div><div class="line">$ hexo server		启动服务(浏览器打开http:<span class="comment">//localhost:4000/)</span></div></pre></td></tr></table></figure>
-<ul>
-<li>编译和部署</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g 		<span class="comment">//编译</span></div><div class="line">$ hexo d 		<span class="comment">//部署</span></div></pre></td></tr></table></figure>
-<ul>
-<li>文章</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">new</span> <span class="string">"new article"</span>		<span class="comment">//新建文章</span></div><div class="line">&#123;</div><div class="line">之后在source/_posts目录下面，多了一个<span class="keyword">new</span>-article.md的文件。</div><div class="line">打开之后我们会看到：</div><div class="line">title: <span class="keyword">new</span> article</div><div class="line">date: <span class="number">2014</span>-<span class="number">11</span>-<span class="number">01</span> <span class="number">20</span>:<span class="number">10</span>:<span class="number">33</span></div><div class="line">tags:</div><div class="line">---	</div><div class="line">&#125;</div><div class="line"></div><div class="line">文章可以拥有如下属性：</div><div class="line">Setting 	Description 	Default</div><div class="line">layout 	Layout 	post或page</div><div class="line">title 	文章的标题 	 </div><div class="line">date 	创建日期 	文件的创建日期</div><div class="line">updated 	修改日期 	文件的修改日期</div><div class="line">comments 	是否开启评论 	<span class="keyword">true</span></div><div class="line">tags 	标签 	 </div><div class="line">categories 	分类 	 </div><div class="line">permalink 	url中的名字 	文件名</div><div class="line"></div><div class="line"></div><div class="line">``` </div><div class="line">- 草稿</div><div class="line"></div><div class="line">``` java</div><div class="line">$ hexo <span class="keyword">new</span> draft <span class="string">"new draft"</span> 			<span class="comment">//新建草稿</span></div><div class="line">&#123;</div><div class="line">会在source/_drafts目录下生成一个<span class="keyword">new</span>-draft.md文件。但是这个文件不被显示在页面上，链接也访问不到。也就是说如果你想把某一篇文章移除显示，又不舍得删除，可以把它移动到_drafts目录之中。</div><div class="line">&#125;</div><div class="line"></div><div class="line">$ hexo server --drafts					<span class="comment">//预览草稿</span></div><div class="line"></div><div class="line">$ hexo publish [layout] &lt;filename&gt; 		<span class="comment">//把草稿变成文章</span></div></pre></td></tr></table></figure>
-<h2 id="配置文件-blog-config-yml"><a href="#配置文件-blog-config-yml" class="headerlink" title="配置文件(blog/_config.yml)"></a>配置文件(blog/_config.yml)</h2><ul>
-<li>头信息</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># Hexo Configuration Hexo配置文件</div><div class="line">## Docs: https://hexo.io/docs/configuration.html</div><div class="line">## Source: https://github.com/hexojs/hexo/</div><div class="line"></div><div class="line">``` </div><div class="line">- 网站信息</div><div class="line"></div><div class="line">``` java</div><div class="line"></div><div class="line">#标题</div><div class="line">title: 学志の博客</div><div class="line">#副标题</div><div class="line">subtitle: 记录学习的技能和遇到的问题</div><div class="line">#网站描述</div><div class="line">description: 做自己爱做的事，爱自己在做的事！</div><div class="line">#作者昵称</div><div class="line">author: 张学志</div><div class="line">#网站语言，默认英语，设置简体汉语</div><div class="line">language: zh-Hans</div><div class="line"></div><div class="line">#时区，默认电脑时区</div><div class="line">#timezone: </div><div class="line">timezone: Asia/Shanghai</div></pre></td></tr></table></figure>
-<ul>
-<li>网址设置</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#如果网站是放在子目录中，将url设置成'http://yoursite.com/child'，将root设置成'/child/'</div><div class="line">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</div><div class="line">#网址</div><div class="line">url: http://zhangxuezhi.com</div><div class="line">#网站根目录。如果网站是放在子目录中，将root设置成'子目录名'</div><div class="line">root: /</div><div class="line">#文章链接地址格式 。即文章存放的目录。</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">permalink_defaults:</div></pre></td></tr></table></figure>
-<ul>
-<li>目录设置</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#资源文件夹，放在里面的文件会上传到github中</div><div class="line">source_dir: source</div><div class="line">#公共文件夹，存放生成的静态文件</div><div class="line">public_dir: public</div><div class="line">#标签文件夹，默认是tags。实际存放在source/tags中。</div><div class="line">tag_dir: tags</div><div class="line">rss_dir: rss</div><div class="line">#档案文件夹，默认是archives。</div><div class="line">archive_dir: archives</div><div class="line">#分类文件夹，默认是categories。实际存放在source/categories中。</div><div class="line">category_dir: categories</div><div class="line">#代码文件夹，默认是downloads/code</div><div class="line">code_dir: downloads/code</div><div class="line">#国际化文件夹，默认跟language相同</div><div class="line">i18n_dir: :lang</div><div class="line">#不需要渲染的文件夹或文件夹,放在[]中</div><div class="line"># 这两个文件是百度和google的站长验证文件，不能渲染，否则会改变内容，不能验证过</div><div class="line">skip_render: [baidu_verify_R9MZjdMkXT.html, google0f8fac7da2b48ef8.html, README.md, 模板.md]</div></pre></td></tr></table></figure>
-<ul>
-<li>写作选项</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"># 新建博文（帖子）的默认名称</div><div class="line"># File name of new posts</div><div class="line">new_post_name: :title.md </div><div class="line">#默认布局模板是post，而不是draft和page</div><div class="line">default_layout: post</div><div class="line">#是否将标题转换成标题形式（首字母大写）</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">#在新标签页面中打开网页</div><div class="line">external_link: true # Open external links in new tab</div><div class="line">filename_case: 0</div><div class="line">#是否渲染草稿</div><div class="line">render_drafts: false</div><div class="line">#启动 Asset 文件夹</div><div class="line">post_asset_folder: false</div><div class="line">#把链接改为与根目录的相对位址</div><div class="line">relative_link: false</div><div class="line">#显示未来的文章</div><div class="line">future: true</div><div class="line">#代码块的设置</div><div class="line">highlight:</div><div class="line">  enable: true          #  使用代码高亮</div><div class="line">  line_number: true # 显示行号</div><div class="line">  auto_detect: true  # 自动检测语言</div><div class="line">  tab_replace:</div></pre></td></tr></table></figure>
-<ul>
-<li>分类和标签</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 默认分类</div><div class="line">default_category: uncategorized</div><div class="line">#分类别名</div><div class="line">category_map:</div><div class="line">#标签别名</div><div class="line">tag_map:</div></pre></td></tr></table></figure>
-<ul>
-<li>日期和时间格式</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#Hexo 使用 Moment.js 来解析和显示时间。</div><div class="line">## You can customize the date format as defined in</div><div class="line">## http://momentjs.com/docs/#/displaying/format/</div><div class="line">date_format: YYYY-MM-DD</div><div class="line">time_format: HH:mm:ss</div></pre></td></tr></table></figure>
-<ul>
-<li>分页配置</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"># ---------------下面选项需要对应插件的支持---------------</div><div class="line"># npm install hexo-generator-index --save</div><div class="line"># npm install hexo-generator-archive --save</div><div class="line"># npm install hexo-generator-category --save</div><div class="line"># npm install hexo-generator-tag --save</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">#每页显示的文章量 </div><div class="line">#per_page: 20</div><div class="line">#首页的分页设置</div><div class="line">index_generator:</div><div class="line">  per_page: 5</div><div class="line">#归档页的分页设置</div><div class="line">archive_generator:</div><div class="line">  per_page: 30</div><div class="line">  yearly: true</div><div class="line">  monthly: true</div><div class="line">#标签页的分页设置</div><div class="line">tag_generator:</div><div class="line">  per_page: 20</div><div class="line"></div><div class="line">#分页路径，在public中可以看到</div><div class="line">#pagination_dir: page</div><div class="line"></div><div class="line"></div><div class="line"># Extensions 拓展插件配置</div><div class="line">## Plugins: https://hexo.io/plugins/</div><div class="line">plugins: </div><div class="line">baidusitemap: </div><div class="line">  path: baidusitemap.xml</div></pre></td></tr></table></figure>
-<ul>
-<li>配置RSS</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">feed: </div><div class="line">  #feed 类型 (atom/rss2)</div><div class="line">  type: atom   </div><div class="line">  #rss 路径</div><div class="line">  path: atom.xml  </div><div class="line">  #在 rss 中最多生成的文章数(0显示所有)</div><div class="line">  limit: 0</div></pre></td></tr></table></figure>
-<ul>
-<li>自定义站点内容搜索</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 需要先安装插件：</div><div class="line"># npm install hexo-generator-search --save</div><div class="line">search:</div><div class="line">  path: search.xml</div><div class="line">  # 如只想索引文章，可设置为post</div><div class="line">  field: all</div></pre></td></tr></table></figure>
-<ul>
-<li>主题配置</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">## Themes: https://hexo.io/themes/</div><div class="line">#theme: false #禁用主题</div><div class="line">#theme: landscape</div><div class="line">theme: next</div></pre></td></tr></table></figure>
-<ul>
-<li>部署配置</li>
-</ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  #repo: https://github.com/xuezhisd/xuezhisd.github.io.git</div><div class="line">  repo: </div><div class="line">    # 部署到github</div><div class="line">    github: git@github.com:xuezhisd/xuezhisd.github.io.git,master</div><div class="line">    # 部署到coding.net。取消注释，可同时部署</div><div class="line">    #coding: git@git.coding.net:xuezhisd/blog.git,coding-pages</div><div class="line">  #type: baidu_url_submitter</div></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>未完待续</p>
-
+          
       
     </div>
     
@@ -372,6 +306,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2017/06/27/hexo-command/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
