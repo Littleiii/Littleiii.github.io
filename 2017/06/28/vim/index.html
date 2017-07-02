@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="vim常用命令光标移动(Cursor Movement) 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162命令	作用（解释）h,j,k,l 	h表示往左，j表示往下，k表示往右，l表示往上Ctrl+f 	上一页Ctrl">
+<meta name="description" content="vim常用命令光标移动(Cursor Movement)  h,j,k,l     h表示往左，j表示往下，k表示往右，l表示往上 Ctrl+f     上一页 Ctrl+b     下一页 w, e, W, E     跳到单词的后面，小写包括标点 b, B     以单词为单位往前跳动光标，小写包含标点 O     开启新的一行 ^     一行的开始 $     一行的结尾 gg     文">
 <meta name="keywords" content="vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vim">
 <meta property="og:url" content="https://littleiii.github.io/2017/06/28/vim/index.html">
 <meta property="og:site_name" content="会理发的店小二">
-<meta property="og:description" content="vim常用命令光标移动(Cursor Movement) 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162命令	作用（解释）h,j,k,l 	h表示往左，j表示往下，k表示往右，l表示往上Ctrl+f 	上一页Ctrl">
-<meta property="og:updated_time" content="2017-06-28T10:49:30.000Z">
+<meta property="og:description" content="vim常用命令光标移动(Cursor Movement)  h,j,k,l     h表示往左，j表示往下，k表示往右，l表示往上 Ctrl+f     上一页 Ctrl+b     下一页 w, e, W, E     跳到单词的后面，小写包括标点 b, B     以单词为单位往前跳动光标，小写包含标点 O     开启新的一行 ^     一行的开始 $     一行的结尾 gg     文">
+<meta property="og:updated_time" content="2017-07-02T00:22:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim">
-<meta name="twitter:description" content="vim常用命令光标移动(Cursor Movement) 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162命令	作用（解释）h,j,k,l 	h表示往左，j表示往下，k表示往右，l表示往上Ctrl+f 	上一页Ctrl">
+<meta name="twitter:description" content="vim常用命令光标移动(Cursor Movement)  h,j,k,l     h表示往左，j表示往下，k表示往右，l表示往上 Ctrl+f     上一页 Ctrl+b     下一页 w, e, W, E     跳到单词的后面，小写包括标点 b, B     以单词为单位往前跳动光标，小写包含标点 O     开启新的一行 ^     一行的开始 $     一行的结尾 gg     文">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -182,7 +182,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/io/">io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代理/">代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/反射/">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/注解/">注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/io/">io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代理/">代理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/反射/">反射</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/注解/">注解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a></li></ul>
                     </div>
                 </section>
                 
@@ -298,7 +298,58 @@
       
           
         <h2 id="vim常用命令"><a href="#vim常用命令" class="headerlink" title="vim常用命令"></a>vim常用命令</h2><p>光标移动(Cursor Movement)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">命令	作用（解释）</div><div class="line">h,j,k,l 	h表示往左，j表示往下，k表示往右，l表示往上</div><div class="line">Ctrl+f 	上一页</div><div class="line">Ctrl+b 	下一页</div><div class="line">w, e, W, E 	跳到单词的后面，小写包括标点</div><div class="line">b, B 	以单词为单位往前跳动光标，小写包含标点</div><div class="line">O 	开启新的一行</div><div class="line">^ 	一行的开始</div><div class="line">$ 	一行的结尾</div><div class="line">gg 	文档的第一行</div><div class="line">``` </div><div class="line"></div><div class="line">&lt;!--more--&gt;</div><div class="line">插入模式(Insert Mode)</div><div class="line"></div><div class="line">``` java</div><div class="line">命令	作用（解释)</div><div class="line">i 	插入到光标前面</div><div class="line">I 	插入到行的开始位置</div><div class="line">a 	插入到光标的后面</div><div class="line">A 	插入到行的最后位置</div><div class="line">o, O 	新开一行</div><div class="line">Esc 	关闭插入模式</div><div class="line">``` </div><div class="line"></div><div class="line">编辑(Editing)</div><div class="line"></div><div class="line">``` java</div><div class="line">命令	作用（解释）</div><div class="line">r 	在插入模式替换光标所在的一个字符</div><div class="line">J 	合并下一行到上一行</div><div class="line">s 	删除光标所在的一个字符, 光标还在当行</div><div class="line">S 	删除光标所在的一行，光标还在当行，不同于dd</div><div class="line">u 	撤销上一步操作</div><div class="line">ctrl+r 	恢复上一步操作</div><div class="line">. 	重复最后一个命令</div><div class="line">~ 	变换为大写</div><div class="line">[N]&gt;&gt; 	一行或N行往右移动一个tab</div><div class="line">[N]&lt;&lt; 	一行或N行往左移动一个tab</div><div class="line">``` </div><div class="line">关闭(Exiting)</div><div class="line"></div><div class="line">``` java</div><div class="line">命令	作用（解释)</div><div class="line">:w 	保存</div><div class="line">:wq, :x 	保存并关闭</div><div class="line">:q 	关闭（已保存）</div><div class="line">:q! 	强制关闭</div><div class="line">``` </div><div class="line"></div><div class="line">搜索(Search)</div><div class="line"></div><div class="line">``` java</div><div class="line">命令	作用（解释)</div><div class="line">/pattern 	搜索（非插入模式)</div><div class="line">?pattern 	往后搜索</div><div class="line">n 	光标到达搜索结果的前一个目标</div><div class="line">N 	光标到达搜索结果的后一个目标</div><div class="line">视觉模式(Visual Mode)</div><div class="line">命令	作用（解释)</div><div class="line">v 	选中一个或多个字符</div><div class="line">V 	选中一行</div></pre></td></tr></table></figure>
+<ul>
+<li>h,j,k,l     h表示往左，j表示往下，k表示往右，l表示往上</li>
+<li>Ctrl+f     上一页</li>
+<li>Ctrl+b     下一页</li>
+<li>w, e, W, E     跳到单词的后面，小写包括标点</li>
+<li>b, B     以单词为单位往前跳动光标，小写包含标点</li>
+<li>O     开启新的一行</li>
+<li>^     一行的开始</li>
+<li>$     一行的结尾</li>
+<li>gg     文档的第一行 </li>
+</ul>
+<a id="more"></a>
+<p>插入模式(Insert Mode)</p>
+<ul>
+<li>i     插入到光标前面</li>
+<li>I     插入到行的开始位置</li>
+<li>a     插入到光标的后面</li>
+<li>A     插入到行的最后位置</li>
+<li>o, O     新开一行</li>
+<li>Esc     关闭插入模式</li>
+</ul>
+<p>编辑(Editing)</p>
+<ul>
+<li>r     在插入模式替换光标所在的一个字符</li>
+<li>J     合并下一行到上一行</li>
+<li>s     删除光标所在的一个字符, 光标还在当行</li>
+<li>S     删除光标所在的一行，光标还在当行，不同于dd</li>
+<li>u     撤销上一步操作</li>
+<li>ctrl+r     恢复上一步操作</li>
+<li>.     重复最后一个命令</li>
+<li>~     变换为大写</li>
+<li>[N]&gt;&gt;     一行或N行往右移动一个tab</li>
+<li>[N]&lt;&lt;     一行或N行往左移动一个tab</li>
+</ul>
+<p>关闭(Exiting)</p>
+<ul>
+<li>:w     保存</li>
+<li>:wq, :x     保存并关闭</li>
+<li>:q     关闭（已保存）</li>
+<li>:q!     强制关闭</li>
+</ul>
+<p>搜索(Search)</p>
+<ul>
+<li>/pattern     搜索（非插入模式)</li>
+<li>?pattern     往后搜索</li>
+<li>n     光标到达搜索结果的前一个目标</li>
+<li>N     光标到达搜索结果的后一个目标</li>
+<li>视觉模式(Visual Mode)</li>
+<li>命令    作用（解释)</li>
+<li>v     选中一个或多个字符</li>
+<li>V     选中一行</li>
+</ul>
 <h2 id="vim复制粘贴命令"><a href="#vim复制粘贴命令" class="headerlink" title="vim复制粘贴命令"></a>vim复制粘贴命令</h2><ul>
 <li>使用v进入可视模式，移动光标键选定内容。 </li>
 <li>复制的命令是y，即yank（提起） ，常用的命令如下:</li>
@@ -321,7 +372,7 @@
         <p><span>本文标题:</span><a href="/2017/06/28/vim/">vim</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Mr.liu</a></p>
         <p><span>发布时间:</span>2017-06-28, 18:12:02</p>
-        <p><span>最后更新:</span>2017-06-28, 18:49:30</p>
+        <p><span>最后更新:</span>2017-07-02, 08:22:07</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/06/28/vim/" title="vim">https://littleiii.github.io/2017/06/28/vim/</a>
             <span class="copy-path" data-clipboard-text="原文: https://littleiii.github.io/2017/06/28/vim/　　作者: Mr.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
